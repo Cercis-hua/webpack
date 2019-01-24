@@ -1,12 +1,15 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const template = require('art-template');
+const jquery = require('jquery');
 
 module.exports = {
-    entry: './index.js',
+    entry: './src/U3CompoLib.js',
     output: {
-        filename: 'bundle.js',
-        // path: path.resolve(__dirname, 'dist')
+        // path: path.resolve(__dirname, 'dist'),
+        filename: "bundle.js",
+        libraryTarget: 'umd'
     },
     module: {
         rules: [{
@@ -32,10 +35,14 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: '[name]-[hash].html',
+            filename: 'index.html',
             template: 'index.html',
             inject: 'head',
             kill: 'bill',
+        }),
+        new webpack.ProvidePlugin({
+            'template': 'template',
+            '$': 'jquery'
         })
     ]
 }

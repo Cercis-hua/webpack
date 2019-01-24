@@ -1,0 +1,22 @@
+
+// 将某个元素置于父元素的中心，需指定元素的宽高
+@mixin putEleCenter{
+  display: block;
+  position: absolute;
+  top: 50%;
+  //bottom: 0;
+  left: 50%;
+  //right: 0;
+  //margin: auto;
+  transform: translate(-50%,-50%);
+}
+
+// 垂直居中
+@mixin verticalCenter{
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}

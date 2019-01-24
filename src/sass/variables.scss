@@ -1,0 +1,20 @@
+// 选项选中相关颜色
+$optSelectedColor: #ffa984;  // 选中选项时的字体颜色
+$optSelectedBgColor: #ffe7d6;  // 选中选项时的背景色
+$optSelectedBorderColor: #ff8752;   // 选中选项时的边框色
+$optSelectedRadioColor: $optSelectedBorderColor;   //  选项选中时radio的背景色
+$optSelectedCheckBoxColor: $optSelectedBorderColor;  // 选项选中时checkbox的背景色
+
+//选项正确时的相关颜色
+$optRightColor: #73d4a7;  // 选项正确时的字体颜色
+$optRightBgColor: #ddffef;  // 选项正确时的背景颜色
+$optRightBorderColor: #74d0a9;  //选项正确时边框的颜色
+$optRightRadioColor: $optRightBorderColor;   //  选项正确时radio的背景色
+$optRightCheckBoxColor: $optRightBorderColor;  // 选项正确时checkbox的背景色
+
+// 选项错误时的相关颜色
+$optWrongColor: #fb5959; // 选项错误时的字体颜色
+$optWrongBgColor: #ffe4e4;  // 选项错误时的背景颜色
+$optWrongBorderColor: #fb5959;  // 选项错误时的边框的颜色
+$optWrongRadioColor: $optWrongBorderColor;   //  选项错误时radio的背景色
+$optWrongCheckBoxColor: $optWrongBorderColor;  // 选项错误时checkbox的背景色
