@@ -3,25 +3,28 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const template = require('art-template');
 const jquery = require('jquery');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
-    entry: './src/U3CompoLib.js',
+    entry: './src/index.js',
     output: {
         // path: path.resolve(__dirname, 'dist'),
         filename: "bundle.js",
-        libraryTarget: 'umd'
+        libraryTarget: 'umd',
+        library: ["MyLibrary","[name]"]
     },
     module: {
         rules: [{
             test: /\.css$/,
             use: ['style-loader','css-loader']
         },{
-            // test: /\.js$/,
-            // enforce: "pre",
-            // use: [{
-            //     loader: 'jshint-loader'
-            // }],
-            // exclude: /node_modules/
+            test: /\.vue$/,
+            loader: 'vue-loader',
+            options: {
+                compilerOptions: {
+                    preserveWhitespace: false
+                }
+            }
         },{
             test: /\.js$/,
             use: [{
@@ -43,6 +46,7 @@ module.exports = {
         new webpack.ProvidePlugin({
             'template': 'template',
             '$': 'jquery'
-        })
+        }),
+        new VueLoaderPlugin()
     ]
 }
